@@ -46,11 +46,13 @@
             grid-area: i0;
             @include center;
             color: var(--color-circle);
+     
         }
         &--10 {
             grid-area: i10;
             @include center;
             color: var(--color-cross);
+        
         }
     }
     &__color {

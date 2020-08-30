@@ -34,6 +34,14 @@ body {
   background-color: var(--background);
 }
 
+.red {
+  color: var(--color-circle) !important;
+}
+
+.blue {
+  color: var(--color-cross) !important;
+}
+
 .header {
   width: 100%;
   background-color: inherit;
@@ -42,17 +50,6 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-}
-.header__player1 {
-  color: var(--color-circle);
-  display: flex;
-  flex-direction: column;
-}
-.header__player2 {
-  color: var(--color-cross);
-  display: flex;
-  flex-direction: column;
-  display: none;
 }
 .header__result {
   font-size: 4rem;
