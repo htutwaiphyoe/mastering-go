@@ -6,13 +6,14 @@
     --color-circle: #e1394d;
     --color-cross: #289acb;
     --color-box-dark: #333;
-    --color-box-light: rgb(214, 214, 214);
+    --color-box-light: #eee;
     --foreground: var(--color-light);
     --background: var(--color-dark);
     --box-dark: var(--color-box-dark);
     --box-light: var(--color-box-light);
     --color-yellow: #d5c33e;
     --color-green: #41d357;
+    --box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.151);
 }
 
 *,
@@ -33,6 +34,11 @@ body {
     line-height: 1.6;
     color: var(--foreground);
     background-color: var(--background);
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
 }
 .red {
     color: var(--color-circle) !important;
@@ -47,4 +53,15 @@ body {
 
 .green {
     color: var(--color-green) !important;
+}
+
+.white-theme {
+    color: var(--background);
+    background-color: var(--foreground);
+}
+.white-box {
+    background-color: var(--box-light) !important;
+}
+.dark-icon {
+    fill: var(--box-dark) !important;
 }

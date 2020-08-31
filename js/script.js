@@ -1,13 +1,19 @@
 const player = [0, 1];
 const winConditions = ["123", "456", "789", "147", "258", "369", "159", "357"];
 const colors = ["red", "green", "blue", "yellow"];
-let state, gameState, turn, count, playing;
+let state,
+    gameState,
+    turn,
+    count,
+    playing,
+    whiteTheme = false;
 const DOMs = {
     box: document.querySelector(".box"),
     headerText: document.querySelector(".header__text"),
     restartBtn: document.querySelector(".restart__btn"),
     colorOne: document.querySelector(".box__item--0 select"),
     colorTwo: document.querySelector(".box__item--10 select"),
+    theme: document.querySelector(".theme"),
 };
 const color = {
     player1: "",
@@ -163,4 +169,27 @@ DOMs.box.addEventListener("change", (e) => {
         changeSelectBox("player2", "colorTwo");
     }
 });
+
+// Restart Btn Handler
 DOMs.restartBtn.addEventListener("click", init);
+
+// Theme Button Handler
+DOMs.theme.addEventListener("click", () => {
+    whiteTheme === false ? (whiteTheme = true) : (whiteTheme = false);
+    document.querySelector("body").classList.toggle("white-theme");
+    const squareBoxes = Array.from(document.querySelectorAll(".box__item--square"));
+    squareBoxes.forEach((box, index) => {
+        box.classList.toggle("white-box");
+    });
+    DOMs.restartBtn.classList.toggle("white-box");
+    DOMs.colorOne.classList.toggle("white-box");
+    DOMs.colorTwo.classList.toggle("white-box");
+    document.querySelector(".restart__btn svg").classList.toggle("dark-icon");
+    whiteTheme
+        ? document
+              .querySelector(".theme svg use")
+              .setAttribute("href", "./assets/img/symbol-defs.svg#icon-toggle-off")
+        : document
+              .querySelector(".theme svg use")
+              .setAttribute("href", "./assets/img/symbol-defs.svg#icon-toggle-on");
+});
