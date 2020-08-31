@@ -1,34 +1,56 @@
 const player = [0, 1];
 const winConditions = ["123", "456", "789", "147", "258", "369", "159", "357"];
-let turn = 0;
-const color = {
-    player1: ["red", "blue", "green"],
-    player2: ["red", "blue", "green"],
-};
-let gameState = false;
-let state = ["", "", "", "", "", "", "", "", ""];
+const colors = ["red", "green", "blue", "yellow"];
+let state, gameState, turn, count, playing;
 const DOMs = {
     box: document.querySelector(".box"),
     headerText: document.querySelector(".header__text"),
     restartBtn: document.querySelector(".restart__btn"),
+    colorOne: document.querySelector(".box__item--0 select"),
+    colorTwo: document.querySelector(".box__item--10 select"),
 };
-let count = 0;
+const color = {
+    player1: "",
+    player2: "",
+};
+
+const selectBoxHandler = (playing) => {
+    if (playing) {
+        DOMs.colorOne.setAttribute("disabled", "disabled");
+        DOMs.colorTwo.setAttribute("disabled", "disabled");
+    } else {
+        DOMs.colorOne.removeAttribute("disabled");
+        DOMs.colorTwo.removeAttribute("disabled");
+    }
+};
 const init = () => {
+    color.player1 = DOMs.colorOne.value;
+    color.player2 = DOMs.colorTwo.value;
+
+    DOMs.colorOne.classList.add(DOMs.colorOne.value);
+    DOMs.colorTwo.classList.add(DOMs.colorTwo.value);
+    DOMs.headerText.classList.remove(color.player1);
+    DOMs.headerText.classList.remove(color.player2);
+    DOMs.headerText.classList.add(color.player1);
+
     count = 0;
     turn = 0;
     gameState = false;
+    playing = false;
+
     state = ["", "", "", "", "", "", "", "", ""];
     DOMs.headerText.textContent = "O Player's Turn";
-    DOMs.headerText.classList.remove(color.player1[0]);
-    DOMs.headerText.classList.add(color.player1[0]);
-    DOMs.headerText.classList.remove(color.player2[1]);
+    selectBoxHandler(playing);
     const squareBoxes = Array.from(document.querySelectorAll(".box__item--square"));
     squareBoxes.forEach((box, index) => {
-        box.classList.remove(color.player1[0]);
-        box.classList.remove(color.player2[1]);
         box.textContent = index + 1;
+        colors.forEach((color) => {
+            box.classList.remove(color);
+        });
     });
 };
+init();
+
 const checkResult = (state, type) => {
     let answer = "";
     for (let i = 0; i < 8; i++) {
@@ -58,7 +80,7 @@ const checkResult = (state, type) => {
                 answer = `${state[2]}${state[4]}${state[6]}`;
                 break;
         }
-        console.log(answer);
+
         if (answer === "OOO") {
             return "O";
         } else if (answer === "XXX") {
@@ -66,7 +88,7 @@ const checkResult = (state, type) => {
         }
     }
     count += 1;
-    console.log(count);
+
     if (count === 9) {
         return "DRAW";
     } else {
@@ -76,6 +98,8 @@ const checkResult = (state, type) => {
 
 DOMs.box.addEventListener("click", (e) => {
     if (!gameState) {
+        playing = true;
+
         const element = e.target;
         const elementId = e.target.dataset.id;
         if (elementId && elementId !== "0" && elementId !== "10") {
@@ -84,21 +108,23 @@ DOMs.box.addEventListener("click", (e) => {
                     state[+elementId - 1] = "O";
 
                     element.textContent = "O";
-                    element.classList.add(color.player1[0]);
+                    element.classList.add(color.player1);
                     let result = checkResult(state, "O");
                     if (result === "O") {
                         DOMs.headerText.textContent = "O Player wins!!!";
 
                         gameState = true;
+                        playing = false;
                     } else if (result === "DRAW") {
                         DOMs.headerText.textContent = "DRAW, Play Again!!!";
-                        DOMs.headerText.classList.remove(color.player1[0]);
-                        DOMs.headerText.classList.remove(color.player2[1]);
+                        DOMs.headerText.classList.remove(color.player1);
+                        DOMs.headerText.classList.remove(color.player2);
                         gameState = true;
+                        playing = false;
                     } else {
                         DOMs.headerText.textContent = "X Player's Turn";
-                        DOMs.headerText.classList.toggle(color.player1[0]);
-                        DOMs.headerText.classList.toggle(color.player2[1]);
+                        DOMs.headerText.classList.remove(color.player1);
+                        DOMs.headerText.classList.add(color.player2);
 
                         turn = 1;
                     }
@@ -108,29 +134,52 @@ DOMs.box.addEventListener("click", (e) => {
                     state[+elementId - 1] = "X";
                     element.textContent = "X";
 
-                    element.classList.add(color.player2[1]);
+                    element.classList.add(color.player2);
                     let result = checkResult(state, "X");
                     if (result === "X") {
                         DOMs.headerText.textContent = "X Player wins!!!";
 
                         gameState = true;
+                        playing = false;
                         turn = 0;
                     } else if (result === "DRAW") {
                         DOMs.headerText.textContent = "DRAW, Play Again!!!";
-                        DOMs.headerText.classList.remove(color.player1[0]);
-                        DOMs.headerText.classList.remove(color.player2[1]);
+                        DOMs.headerText.classList.remove(color.player1);
+                        DOMs.headerText.classList.remove(color.player2);
 
                         gameState = true;
+                        playing = false;
                     } else {
                         DOMs.headerText.textContent = "O Player's Turn";
-                        DOMs.headerText.classList.toggle(color.player1[0]);
-                        DOMs.headerText.classList.toggle(color.player2[1]);
+
+                        DOMs.headerText.classList.remove(color.player2);
+                        DOMs.headerText.classList.add(color.player1);
                         turn = 0;
                     }
                 }
             }
         }
+        selectBoxHandler(playing);
     }
 });
+DOMs.box.addEventListener("change", (e) => {
+    if (!playing) {
+        const id = e.target.closest("div").dataset.id;
+        const value = e.target.value;
 
+        if (+id === 0) {
+            DOMs.colorOne.classList.remove(color.player1);
+            DOMs.headerText.classList.remove(color.player1);
+            color.player1 = value;
+            DOMs.colorOne.classList.add(color.player1);
+            DOMs.headerText.classList.add(color.player1);
+        } else if (+id === 10) {
+            DOMs.colorTwo.classList.remove(color.player2);
+            DOMs.headerText.classList.remove(color.player2);
+            color.player2 = value;
+            DOMs.colorTwo.classList.add(color.player2);
+            DOMs.headerText.classList.add(color.player2);
+        }
+    }
+});
 DOMs.restartBtn.addEventListener("click", init);

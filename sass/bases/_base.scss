@@ -11,6 +11,8 @@
     --background: var(--color-dark);
     --box-dark: var(--color-box-dark);
     --box-light: var(--color-box-light);
+    --color-yellow: #d5c33e;
+    --color-green: #41d357;
 }
 
 *,
@@ -37,4 +39,12 @@ body {
 }
 .blue {
     color: var(--color-cross) !important;
+}
+
+.yellow {
+    color: var(--color-yellow) !important;
+}
+
+.green {
+    color: var(--color-green) !important;
 }

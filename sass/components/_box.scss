@@ -46,20 +46,18 @@
             grid-area: i0;
             @include center;
             color: var(--color-circle);
-     
         }
         &--10 {
             grid-area: i10;
             @include center;
             color: var(--color-cross);
-        
         }
     }
     &__color {
         width: 50%;
         height: 5rem;
         background-color: var(--box-dark);
-        color: inherit;
+
         padding: 0.5rem;
     }
 }
