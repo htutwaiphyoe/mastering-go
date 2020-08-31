@@ -135,6 +135,14 @@ body {
   -o-transform: translateY(0rem);
 }
 
+.footer {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  color: inherit;
+  font-size: 1.5rem;
+}
+
 .box {
   width: 100%;
   margin: 0 auto;
