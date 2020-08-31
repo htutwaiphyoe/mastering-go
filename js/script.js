@@ -166,18 +166,18 @@ DOMs.box.addEventListener("click", (e) => {
 DOMs.box.addEventListener("change", (e) => {
     const id = e.target.closest("div").dataset.id;
     const value = e.target.value;
+    const changeSelectBox = (player, selectBox) => {
+        DOMs[selectBox].classList.remove(color[player]);
+        DOMs.headerText.classList.remove(color[player]);
+        color[player] = value;
+        DOMs[selectBox].classList.add(color[player]);
 
+        player === "player1" && DOMs.headerText.classList.add(color[player]);
+    };
     if (+id === 0) {
-        DOMs.colorOne.classList.remove(color.player1);
-        DOMs.headerText.classList.remove(color.player1);
-        color.player1 = value;
-        DOMs.colorOne.classList.add(color.player1);
-        DOMs.headerText.classList.add(color.player1);
+        changeSelectBox("player1", "colorOne");
     } else if (+id === 10) {
-        DOMs.colorTwo.classList.remove(color.player2);
-        DOMs.headerText.classList.remove(color.player2);
-        color.player2 = value;
-        DOMs.colorTwo.classList.add(color.player2);
+        changeSelectBox("player2", "colorTwo");
     }
 });
 DOMs.restartBtn.addEventListener("click", init);
