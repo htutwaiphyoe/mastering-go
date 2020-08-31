@@ -98,11 +98,10 @@ const checkResult = (state, type) => {
 
 DOMs.box.addEventListener("click", (e) => {
     if (!gameState) {
-        playing = true;
-
         const element = e.target;
         const elementId = e.target.dataset.id;
         if (elementId && elementId !== "0" && elementId !== "10") {
+            playing = true;
             if (turn === 0) {
                 if (element.textContent !== "O" && element.textContent !== "X") {
                     state[+elementId - 1] = "O";
