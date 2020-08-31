@@ -159,8 +159,12 @@ DOMs.box.addEventListener("change", (e) => {
     const value = e.target.value;
     const changeSelectBox = (player, selectBox) => {
         DOMs[selectBox].classList.remove(color[player]);
-        if (color.player1 !== color.player2) {
-            DOMs.headerText.classList.remove(color[player]);
+
+        DOMs.headerText.classList.remove(color[player]);
+        if (color.player1 === color.player2) {
+            if (player === "player2") {
+                DOMs.headerText.classList.add(color[player]);
+            }
         }
 
         color[player] = value;
