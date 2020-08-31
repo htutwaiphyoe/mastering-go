@@ -101,67 +101,53 @@ DOMs.box.addEventListener("click", (e) => {
     if (!gameState) {
         const element = e.target;
         const elementId = e.target.dataset.id;
-        if (elementId && elementId !== "0" && elementId !== "10") {
-            playing = true;
-            if (turn === 0) {
-                if (element.textContent !== "O" && element.textContent !== "X") {
-                    state[+elementId - 1] = "O";
+        const playingHandler = (type, player) => {
+            if (element.textContent !== "O" && element.textContent !== "X") {
+                state[+elementId - 1] = type;
 
-                    element.textContent = "O";
-                    element.classList.add(color.player1);
-                    let result = checkResult(state);
-                    if (result === "O") {
-                        DOMs.headerText.textContent = "O Player wins!!!";
+                element.textContent = type;
+                element.classList.add(color[player]);
+                let result = checkResult(state);
+                if (result === type) {
+                    DOMs.headerText.textContent = `${type} Player wins!!!`;
 
-                        gameState = true;
-                        playing = false;
-                    } else if (result === "DRAW") {
-                        DOMs.headerText.textContent = "DRAW, Play Again!!!";
-                        DOMs.headerText.classList.remove(color.player1);
-                        DOMs.headerText.classList.remove(color.player2);
-                        gameState = true;
-                        playing = false;
-                    } else {
-                        DOMs.headerText.textContent = "X Player's Turn";
+                    gameState = true;
+                    playing = false;
+                } else if (result === "DRAW") {
+                    DOMs.headerText.textContent = "DRAW, Play Again!!!";
+                    DOMs.headerText.classList.remove(color.player1);
+                    DOMs.headerText.classList.remove(color.player2);
+                    gameState = true;
+                    playing = false;
+                } else {
+                    DOMs.headerText.textContent = `${type === "O" ? "X" : "O"} Player's Turn`;
+                    if (type === "O") {
                         DOMs.headerText.classList.remove(color.player1);
                         DOMs.headerText.classList.add(color.player2);
 
                         turn = 1;
-                    }
-                }
-            } else {
-                if (element.textContent !== "O" && element.textContent !== "X") {
-                    state[+elementId - 1] = "X";
-                    element.textContent = "X";
-
-                    element.classList.add(color.player2);
-                    let result = checkResult(state, "X");
-                    if (result === "X") {
-                        DOMs.headerText.textContent = "X Player wins!!!";
-
-                        gameState = true;
-                        playing = false;
-                        turn = 0;
-                    } else if (result === "DRAW") {
-                        DOMs.headerText.textContent = "DRAW, Play Again!!!";
-                        DOMs.headerText.classList.remove(color.player1);
-                        DOMs.headerText.classList.remove(color.player2);
-
-                        gameState = true;
-                        playing = false;
                     } else {
-                        DOMs.headerText.textContent = "O Player's Turn";
-
                         DOMs.headerText.classList.remove(color.player2);
                         DOMs.headerText.classList.add(color.player1);
                         turn = 0;
                     }
                 }
             }
+        };
+
+        if (elementId && elementId !== "0" && elementId !== "10") {
+            playing = true;
+            if (turn === 0) {
+                playingHandler("O", "player1");
+            } else {
+                playingHandler("X", "player2");
+            }
         }
         selectBoxHandler(playing);
     }
 });
+
+// Select Box Handler
 DOMs.box.addEventListener("change", (e) => {
     const id = e.target.closest("div").dataset.id;
     const value = e.target.value;
