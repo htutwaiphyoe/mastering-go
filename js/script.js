@@ -31,9 +31,6 @@ const init = () => {
 
     DOMs.colorOne.classList.add(DOMs.colorOne.value);
     DOMs.colorTwo.classList.add(DOMs.colorTwo.value);
-    DOMs.headerText.classList.remove(color.player1);
-    DOMs.headerText.classList.remove(color.player2);
-    DOMs.headerText.classList.add(color.player1);
 
     count = 0;
     turn = 0;
@@ -48,8 +45,10 @@ const init = () => {
         box.textContent = index + 1;
         colors.forEach((color) => {
             box.classList.remove(color);
+            DOMs.headerText.classList.remove(color);
         });
     });
+    DOMs.headerText.classList.add(color.player1);
 };
 init();
 
@@ -168,11 +167,9 @@ DOMs.box.addEventListener("change", (e) => {
     const value = e.target.value;
     const changeSelectBox = (player, selectBox) => {
         DOMs[selectBox].classList.remove(color[player]);
-        DOMs.headerText.classList.remove(color[player]);
+
         color[player] = value;
         DOMs[selectBox].classList.add(color[player]);
-
-        player === "player1" && DOMs.headerText.classList.add(color[player]);
     };
     if (+id === 0) {
         changeSelectBox("player1", "colorOne");
