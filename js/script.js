@@ -13,7 +13,7 @@ const color = {
     player1: "",
     player2: "",
 };
-
+// Disable select box while playing
 const selectBoxHandler = (playing) => {
     if (playing) {
         DOMs.colorOne.setAttribute("disabled", "disabled");
@@ -23,6 +23,8 @@ const selectBoxHandler = (playing) => {
         DOMs.colorTwo.removeAttribute("disabled");
     }
 };
+
+// Initialzing game
 const init = () => {
     color.player1 = DOMs.colorOne.value;
     color.player2 = DOMs.colorTwo.value;
@@ -51,7 +53,7 @@ const init = () => {
 };
 init();
 
-const checkResult = (state, type) => {
+const checkResult = (state) => {
     let answer = "";
     for (let i = 0; i < 8; i++) {
         switch (i) {
@@ -108,7 +110,7 @@ DOMs.box.addEventListener("click", (e) => {
 
                     element.textContent = "O";
                     element.classList.add(color.player1);
-                    let result = checkResult(state, "O");
+                    let result = checkResult(state);
                     if (result === "O") {
                         DOMs.headerText.textContent = "O Player wins!!!";
 
