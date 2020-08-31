@@ -162,23 +162,20 @@ DOMs.box.addEventListener("click", (e) => {
     }
 });
 DOMs.box.addEventListener("change", (e) => {
-    if (!playing) {
-        const id = e.target.closest("div").dataset.id;
-        const value = e.target.value;
+    const id = e.target.closest("div").dataset.id;
+    const value = e.target.value;
 
-        if (+id === 0) {
-            DOMs.colorOne.classList.remove(color.player1);
-            DOMs.headerText.classList.remove(color.player1);
-            color.player1 = value;
-            DOMs.colorOne.classList.add(color.player1);
-            DOMs.headerText.classList.add(color.player1);
-        } else if (+id === 10) {
-            DOMs.colorTwo.classList.remove(color.player2);
-            DOMs.headerText.classList.remove(color.player2);
-            color.player2 = value;
-            DOMs.colorTwo.classList.add(color.player2);
-            DOMs.headerText.classList.add(color.player2);
-        }
+    if (+id === 0) {
+        DOMs.colorOne.classList.remove(color.player1);
+        DOMs.headerText.classList.remove(color.player1);
+        color.player1 = value;
+        DOMs.colorOne.classList.add(color.player1);
+        DOMs.headerText.classList.add(color.player1);
+    } else if (+id === 10) {
+        DOMs.colorTwo.classList.remove(color.player2);
+        DOMs.headerText.classList.remove(color.player2);
+        color.player2 = value;
+        DOMs.colorTwo.classList.add(color.player2);
     }
 });
 DOMs.restartBtn.addEventListener("click", init);
