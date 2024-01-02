@@ -77,3 +77,5 @@ user console input => fmt.Scan(&variable)
 [fmt](https://pkg.go.dev/fmt)
 
 backtick ` for multiline string
+
+Sprintf for returning formatted string
