@@ -9,3 +9,17 @@ Networking, APIs, Microservices, CLI tools
 Go => compiled language
 
 <https://go.dev/>
+
+file extension => .go
+
+go run file.go
+
+main => main entry point
+
+module => multiple packages
+
+go mod init path
+
+go build
+
+don't have two main functions in different files under same main packages
