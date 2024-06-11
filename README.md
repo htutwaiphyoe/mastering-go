@@ -41,3 +41,7 @@ int to float => float64(int)
 Println => new line
 
 go run . => run module
+
+go can infer type of values
+
+explicit type assignment => int, float64, string, bool
