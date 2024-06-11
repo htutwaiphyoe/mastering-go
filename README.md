@@ -45,3 +45,9 @@ go run . => run module
 go can infer type of values
 
 explicit type assignment => int, float64, string, bool
+
+:= => declare + assign + infer => convention
+
+multiple variable declaration and assignment in one line but cannot add multiple type assignments
+
+constant => const
