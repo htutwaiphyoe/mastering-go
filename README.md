@@ -51,3 +51,15 @@ explicit type assignment => int, float64, string, bool
 multiple variable declaration and assignment in one line but cannot add multiple type assignments
 
 constant => const
+
+go formatter settings
+
+```json
+"[go]": {
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go"
+}
+```
+
+user console input => fmt.Scan(&variable)
