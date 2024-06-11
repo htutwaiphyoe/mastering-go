@@ -1,3 +1,3 @@
-module hello-world
+module investment-calculator
 
 go 1.22.4
