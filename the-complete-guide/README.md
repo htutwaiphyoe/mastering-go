@@ -20,9 +20,11 @@ main => main entry point
 
 module => multiple packages
 
-go mod init path
+go mod init path => create go.mod module file
 
-go build
+go build => create OS-level executable file
+
+./file => run executable file
 
 main function will be called when program is started
 
