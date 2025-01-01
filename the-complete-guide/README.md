@@ -73,3 +73,5 @@ float64 => 0
 if there is no initialization, need to add var keyword and set a type => var age int
 
 user console input => fmt.Scan(&variable)
+
+[fmt](https://pkg.go.dev/fmt)
