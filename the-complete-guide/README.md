@@ -64,4 +64,12 @@ go formatter settings
 }
 ```
 
+Print => same line
+
+if variable is not assigned, there is a default value.
+
+float64 => 0
+
+if there is no initialization, need to add var keyword and set a type => var age int
+
 user console input => fmt.Scan(&variable)
