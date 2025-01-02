@@ -23,11 +23,11 @@ func main() {
 	fmt.Printf("Actual value: %.2f\n", actualValue)
 }
 
-func calculateFutureValues(investmentAmount, expectedReturnRate, noOfYears float64) (float64, float64) {
+func calculateFutureValues(investmentAmount, expectedReturnRate, noOfYears float64) (futureValue float64, actualValue float64) {
 	const inflationRate = 2.5
 
-	futureValue := investmentAmount * math.Pow((1+expectedReturnRate/100), noOfYears)
-	actualValue := futureValue / math.Pow((1+inflationRate/100), noOfYears)
+	futureValue = investmentAmount * math.Pow((1+expectedReturnRate/100), noOfYears)
+	actualValue = futureValue / math.Pow((1+inflationRate/100), noOfYears)
 
 	return futureValue, actualValue
 }
