@@ -79,3 +79,13 @@ user console input => fmt.Scan(&variable)
 backtick ` for multiline string
 
 Sprintf for returning formatted string
+
+function => can return multiple return values, separated by comma and can return explicit value
+
+```go
+fun name(arg type, ...) (returnValue type...){
+    return ...
+}
+```
+
+no need to add return value if there is explicit return values
