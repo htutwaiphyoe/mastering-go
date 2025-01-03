@@ -6,11 +6,9 @@ import (
 )
 
 func main() {
-	var investmentAmount, expectedReturnRate, noOfYears float64
-
-	investmentAmount = getValue("Enter the investment amount: ")
-	expectedReturnRate = getValue("Enter the expected return rate: ")
-	noOfYears = getValue("Enter the number of years: ")
+	investmentAmount := getInput("Enter the investment amount: ")
+	expectedReturnRate := getInput("Enter the expected return rate: ")
+	noOfYears := getInput("Enter the number of years: ")
 
 	futureValue, actualValue := calculateFutureValues(investmentAmount, expectedReturnRate, noOfYears)
 
@@ -18,7 +16,7 @@ func main() {
 	fmt.Printf("Actual value: %.2f\n", actualValue)
 }
 
-func getValue(prompt string) (value float64) {
+func getInput(prompt string) (value float64) {
 	fmt.Print(prompt)
 	fmt.Scan(&value)
 	return value

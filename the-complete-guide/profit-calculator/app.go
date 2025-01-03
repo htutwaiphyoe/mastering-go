@@ -3,11 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	var revenue, expenses, taxPercent float64
-
-	revenue = getValue("Enter the revenue: ")
-	expenses = getValue("Enter the expenses: ")
-	taxPercent = getValue("Enter the tax rate: ")
+	revenue := getInput("Enter the revenue: ")
+	expenses := getInput("Enter the expenses: ")
+	taxPercent := getInput("Enter the tax rate: ")
 
 	earningsBeforeTax, earningsAfterTax := calculateEarnings(revenue, expenses, taxPercent)
 
@@ -17,7 +15,7 @@ func main() {
 	fmt.Println(ebt, eat)
 }
 
-func getValue(prompt string) (value float64) {
+func getInput(prompt string) (value float64) {
 	fmt.Print(prompt)
 	fmt.Scan(&value)
 	return value
