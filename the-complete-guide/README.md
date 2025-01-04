@@ -119,3 +119,12 @@ for {
 
 break => to exit the loop
 continue => to skip current loop iteration
+
+switch => no need break for each case
+
+```go
+switch variable {
+ case value:
+ ...
+}
+```
