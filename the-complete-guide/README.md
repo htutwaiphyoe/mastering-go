@@ -105,3 +105,17 @@ if condition {
 bool => boolean type
 
 for loop only in GO Lang
+
+```go
+for i := 0; i < 2; i++ {
+
+}
+
+// infinite loop
+for {
+
+}
+```
+
+break => to exit the loop
+continue => to skip current loop iteration
