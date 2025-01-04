@@ -89,3 +89,19 @@ fun name(arg type, ...) (returnValue type...){
 ```
 
 no need to add return value if there is explicit return values
+
+```go
+if condition {
+    if condition {
+    
+    }
+} else if condition {
+
+} else {
+
+}
+```
+
+bool => boolean type
+
+for loop only in GO Lang
