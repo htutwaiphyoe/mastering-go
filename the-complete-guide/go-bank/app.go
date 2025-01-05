@@ -1,10 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
+
+var balance = 0.0
 
 func main() {
-	var balance = 0.0
-	fmt.Println("Welcome to Go Bank!")
+	greet()
 
 	for {
 		action := start()
@@ -23,6 +27,10 @@ func main() {
 			invalid()
 		}
 	}
+}
+
+func greet() {
+	fmt.Println("Welcome to Go Bank!")
 }
 
 func start() (action float64) {
@@ -53,8 +61,8 @@ func deposit(balance float64) float64 {
 		}
 
 		balance += amount
+		save(balance)
 		fmt.Printf("Your updated balance is %.2f\n", balance)
-
 		return balance
 	}
 }
@@ -69,8 +77,8 @@ func withdraw(balance float64) float64 {
 		}
 
 		balance -= amount
+		save(balance)
 		fmt.Printf("Your updated balance is %.2f\n", balance)
-
 		return balance
 	}
 }
@@ -88,4 +96,8 @@ func input(prompt string) (value float64) {
 	fmt.Scan(&value)
 
 	return value
+}
+
+func save(balance float64) {
+	os.WriteFile("balance.txt", []byte(fmt.Sprint(balance)), 0644)
 }

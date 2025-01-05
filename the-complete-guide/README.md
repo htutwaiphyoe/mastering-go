@@ -1,5 +1,7 @@
 # Go - The Complete Guide
 
+[github](https://github.com/mschwarzmueller/go-complete-guide-resources)
+
 GO => open-source programming language by Google
 
 Simplicity, Clarity, Scalability, High Performance, Concurrency, built-in standard library, static typing
@@ -110,8 +112,11 @@ for loop only in GO Lang
 for i := 0; i < 2; i++ {
 
 }
+```
 
-// infinite loop
+infinite loop
+
+```go
 for {
 
 }
@@ -128,3 +133,8 @@ switch variable {
  ...
 }
 ```
+
+file module => os
+os.WriteFile(fileName, []byte(string), permission)
+
+0644 => file permission in linux (read/write)
