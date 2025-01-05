@@ -169,3 +169,11 @@ import need the whole module path and file path
 to export functions or variables, must be start with Uppercase
 
 import => package.Uppercase
+
+third-party lib => [pkg](https://pkg.go.dev/)
+
+go get library => npm i library
+
+go get => npm i
+
+add library in go.mod file

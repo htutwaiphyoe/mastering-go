@@ -3,11 +3,13 @@ package main
 import (
 	"fmt"
 
+	"github.com/Pallinder/go-randomdata"
 	"github.com/htutwaiphyoe/mastering-go/the-complete-guide/go-bank/utils"
 )
 
 func greet() {
 	fmt.Println("Welcome to Go Bank!")
+	fmt.Println("Reach out to us with 24/7 customer services: ", randomdata.PhoneNumber())
 }
 
 func start() (action float64) {
