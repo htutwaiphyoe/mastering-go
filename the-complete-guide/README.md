@@ -182,7 +182,11 @@ go has pointers like C
 
 pointers => variable that stores value address instead of value
 
-& => address of stored values
+& => &variable => address of stored values
 
 1. avoid unnecessary value copies
 2. direct data mutation
+
+pointer type => *type
+
+get the pointer value => dereferencing => *variable
