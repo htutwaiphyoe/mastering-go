@@ -184,9 +184,11 @@ pointers => variable that stores value address instead of value
 
 & => &variable => address of stored values
 
-1. avoid unnecessary value copies
-2. direct data mutation
+1. avoid unnecessary value copies => &variable, *variable
+2. direct data mutation => *variable =*variable
 
 pointer type => *type
 
 get the pointer value => dereferencing => *variable
+
+Scan uses pointers internally to direct data mutation with user input value

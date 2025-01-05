@@ -6,7 +6,11 @@ import (
 )
 
 func main() {
-	age := 25
+	var age int
+
+	fmt.Print("Enter your age: ")
+	fmt.Scan(&age)
+
 	birthYear := getBirthYear(&age)
 	fmt.Printf("Birth year: %v\n", birthYear)
 }
