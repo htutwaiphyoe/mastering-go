@@ -1,13 +1,20 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
+	"strconv"
 )
 
-var balance = 0.0
+const file = "balance.txt"
 
 func main() {
+	var balance, err = read()
+	if err != nil {
+		save(balance)
+	}
+
 	greet()
 
 	for {
@@ -99,5 +106,21 @@ func input(prompt string) (value float64) {
 }
 
 func save(balance float64) {
-	os.WriteFile("balance.txt", []byte(fmt.Sprint(balance)), 0644)
+	err := os.WriteFile(file, []byte(fmt.Sprint(balance)), 0644)
+	if err != nil {
+		fmt.Println("Something went wrong in saving balance!")
+	}
+}
+
+func read() (float64, error) {
+	data, err := os.ReadFile(file)
+	if err != nil {
+		return 0.00, errors.New("failed to read the data")
+	}
+
+	balance, err := strconv.ParseFloat(string(data), 64)
+	if err != nil {
+		return 0.0, errors.New("failed to read the balance")
+	}
+	return balance, nil
 }

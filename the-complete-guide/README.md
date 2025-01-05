@@ -138,3 +138,16 @@ file module => os
 os.WriteFile(fileName, []byte(string), permission)
 
 0644 => file permission in linux (read/write)
+
+_ for unused value
+
+os.ReadFile(fileName)
+change data []byte to string and change string to float64 with strconv.ParseFloat(string(data), 64)
+
+readFile does not break app if there is no file. just return empty byte
+
+error handling => err != nil
+
+custom error => errors package => errors.New(string)
+
+panic(string) => console.error => break the app
