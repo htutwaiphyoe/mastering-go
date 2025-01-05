@@ -155,3 +155,17 @@ panic(string) => console.error => break the app
 every go file must be under a package
 
 if same package, no need to import/export
+
+import are not shared
+
+every package must be in an own sub folder of project
+
+name of the folder is the same name as the package name
+
+file can be any name
+
+import need the whole module path and file path
+
+to export functions or variables, must be start with Uppercase
+
+import => package.Uppercase

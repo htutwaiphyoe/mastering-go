@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/htutwaiphyoe/mastering-go/the-complete-guide/go-bank/utils"
+)
 
 func greet() {
 	fmt.Println("Welcome to Go Bank!")
@@ -15,7 +19,7 @@ func start() (action float64) {
 	fmt.Println("4. Exit")
 	fmt.Println("----------------------------------------")
 
-	action = input("Enter the number of your action: ")
+	action = utils.Input("Enter the number of your action: ")
 
 	return action
 }
@@ -26,7 +30,7 @@ func check(balance float64) {
 
 func deposit(balance float64) float64 {
 	for {
-		amount := input("Enter the amount to deposit: ")
+		amount := utils.Input("Enter the amount to deposit: ")
 
 		if amount < 0 {
 			fmt.Println("Invalid amount. Please try again!")
@@ -34,7 +38,7 @@ func deposit(balance float64) float64 {
 		}
 
 		balance += amount
-		save(balance)
+		utils.SaveToFile(balance, file)
 		fmt.Printf("Your updated balance is %.2f\n", balance)
 		return balance
 	}
@@ -42,7 +46,7 @@ func deposit(balance float64) float64 {
 
 func withdraw(balance float64) float64 {
 	for {
-		amount := input("Enter the amount to withdraw: ")
+		amount := utils.Input("Enter the amount to withdraw: ")
 
 		if amount < 0 || amount > balance {
 			fmt.Println("Invalid amount. Please try again!")
@@ -50,7 +54,7 @@ func withdraw(balance float64) float64 {
 		}
 
 		balance -= amount
-		save(balance)
+		utils.SaveToFile(balance, file)
 		fmt.Printf("Your updated balance is %.2f\n", balance)
 		return balance
 	}

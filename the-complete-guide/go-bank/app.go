@@ -1,18 +1,13 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-	"os"
-	"strconv"
-)
+import "github.com/htutwaiphyoe/mastering-go/the-complete-guide/go-bank/utils"
 
 const file = "balance.txt"
 
 func main() {
-	var balance, err = read()
+	var balance, err = utils.ReadFromFile(file)
 	if err != nil {
-		save(balance)
+		utils.SaveToFile(balance, file)
 	}
 
 	greet()
@@ -34,31 +29,4 @@ func main() {
 			invalid()
 		}
 	}
-}
-
-func input(prompt string) (value float64) {
-	fmt.Print(prompt)
-	fmt.Scan(&value)
-
-	return value
-}
-
-func save(balance float64) {
-	err := os.WriteFile(file, []byte(fmt.Sprint(balance)), 0644)
-	if err != nil {
-		fmt.Println("Something went wrong in saving balance!")
-	}
-}
-
-func read() (float64, error) {
-	data, err := os.ReadFile(file)
-	if err != nil {
-		return 0.00, errors.New("failed to read the data")
-	}
-
-	balance, err := strconv.ParseFloat(string(data), 64)
-	if err != nil {
-		return 0.0, errors.New("failed to read the balance")
-	}
-	return balance, nil
 }
