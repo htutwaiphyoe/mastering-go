@@ -151,3 +151,7 @@ error handling => err != nil
 custom error => errors package => errors.New(string)
 
 panic(string) => console.error => break the app
+
+every go file must be under a package
+
+if same package, no need to import/export
