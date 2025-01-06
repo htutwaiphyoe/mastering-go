@@ -177,3 +177,12 @@ go get library => npm i library
 go get => npm i
 
 add library in go.mod file
+
+go has pointers like C
+
+pointers => variable that stores value address instead of value
+
+& => address of stored values
+
+1. avoid unnecessary value copies
+2. direct data mutation
