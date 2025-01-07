@@ -13,7 +13,7 @@ type User struct {
 	createdAt time.Time
 }
 
-func (user User) Get() {
+func (user User) Display() {
 	fmt.Printf("First Name: %s\n", user.firstName)
 	fmt.Printf("Last Name: %s\n", user.lastName)
 	fmt.Printf("Birth Date: %s\n", user.birthDate)

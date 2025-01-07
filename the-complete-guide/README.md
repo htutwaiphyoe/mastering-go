@@ -214,3 +214,5 @@ Scanln => to end program when press enter
 custom constructor for validation
 
 struct field also must be exported with capital letter
+
+use struct type in embedded struct for direct access of nested field and methods

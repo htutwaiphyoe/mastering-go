@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/mastering-go/the-complete-guide/structs/admin"
 	"github.com/mastering-go/the-complete-guide/structs/user"
 )
 
@@ -18,7 +19,17 @@ func main() {
 		return
 	}
 
-	user.Get()
+	user.Display()
 	user.Clear()
-	user.Get()
+	user.Display()
+
+	admin, err := admin.New("admin@gmail.com", "12345", user)
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	admin.Get()
+
 }
