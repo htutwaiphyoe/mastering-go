@@ -24,7 +24,12 @@ func main() {
 		createdAt: time.Now(),
 	}
 
-	fmt.Println(user)
+	output(user)
+}
+
+func output(user User) {
+	fmt.Printf("First Name: %s\n", user.firstName)
+	fmt.Printf("Last Name: %s\n", user.lastName)
 }
 
 func getInput(prompt string) (value string) {
