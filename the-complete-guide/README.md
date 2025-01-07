@@ -208,3 +208,7 @@ receiver
 use pointer to mutate struct
 
 custom constructor function for convention
+
+Scanln => to end program when press enter
+
+custom constructor for validation

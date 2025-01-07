@@ -4,6 +4,6 @@ import "fmt"
 
 func getInput(prompt string) (value string) {
 	fmt.Print(prompt)
-	fmt.Scan(&value)
+	fmt.Scanln(&value)
 	return value
 }

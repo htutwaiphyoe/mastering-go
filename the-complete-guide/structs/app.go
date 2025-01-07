@@ -1,19 +1,17 @@
 package main
 
-import (
-	"time"
-)
+import "fmt"
 
 func main() {
 	firstName := getInput("Please enter your first name: ")
 	lastName := getInput("Please enter your last name: ")
 	birthDate := getInput("Please enter your birthdate (MM/DD/YYYY): ")
 
-	user := User{
-		firstName: firstName,
-		lastName:  lastName,
-		birthDate: birthDate,
-		createdAt: time.Now(),
+	user, err := newUser(firstName, lastName, birthDate)
+
+	if err != nil {
+		fmt.Println(err)
+		return
 	}
 
 	user.get()

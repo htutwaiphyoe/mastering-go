@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"time"
 )
@@ -23,4 +24,17 @@ func (user *User) clear() {
 	user.lastName = ""
 	user.birthDate = ""
 	user.createdAt = time.Time{}
+}
+
+func newUser(firstName, lastName, birthDate string) (*User, error) {
+	if firstName == "" || lastName == "" || birthDate == "" {
+		return nil, errors.New("please provide all fields")
+	}
+
+	return &User{
+		firstName: firstName,
+		lastName:  lastName,
+		birthDate: birthDate,
+		createdAt: time.Now(),
+	}, nil
 }
