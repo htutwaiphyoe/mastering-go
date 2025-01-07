@@ -204,3 +204,7 @@ func (v type) name(){
 ```
 
 receiver
+
+use pointer to mutate struct
+
+custom constructor function for convention
