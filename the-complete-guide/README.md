@@ -212,3 +212,5 @@ custom constructor function for convention
 Scanln => to end program when press enter
 
 custom constructor for validation
+
+struct field also must be exported with capital letter

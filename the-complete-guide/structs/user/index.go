@@ -1,4 +1,4 @@
-package main
+package user
 
 import (
 	"errors"
@@ -13,20 +13,20 @@ type User struct {
 	createdAt time.Time
 }
 
-func (user User) get() {
+func (user User) Get() {
 	fmt.Printf("First Name: %s\n", user.firstName)
 	fmt.Printf("Last Name: %s\n", user.lastName)
 	fmt.Printf("Birth Date: %s\n", user.birthDate)
 }
 
-func (user *User) clear() {
+func (user *User) Clear() {
 	user.firstName = ""
 	user.lastName = ""
 	user.birthDate = ""
 	user.createdAt = time.Time{}
 }
 
-func newUser(firstName, lastName, birthDate string) (*User, error) {
+func New(firstName, lastName, birthDate string) (*User, error) {
 	if firstName == "" || lastName == "" || birthDate == "" {
 		return nil, errors.New("please provide all fields")
 	}
