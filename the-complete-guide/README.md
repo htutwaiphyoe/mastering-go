@@ -192,3 +192,5 @@ pointer type => *type
 get the pointer value => dereferencing => *variable
 
 Scan uses pointers internally to direct data mutation with user input value
+
+can access properties of struct with pointer address => no need to dereference => shortcut way

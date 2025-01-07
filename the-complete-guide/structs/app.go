@@ -24,12 +24,13 @@ func main() {
 		createdAt: time.Now(),
 	}
 
-	output(user)
+	output(&user)
 }
 
-func output(user User) {
+func output(user *User) {
 	fmt.Printf("First Name: %s\n", user.firstName)
 	fmt.Printf("Last Name: %s\n", user.lastName)
+	fmt.Printf("Birth Date: %s\n", user.birthDate)
 }
 
 func getInput(prompt string) (value string) {
