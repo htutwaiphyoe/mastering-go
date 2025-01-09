@@ -216,3 +216,5 @@ custom constructor for validation
 struct field also must be exported with capital letter
 
 use struct type in embedded struct for direct access of nested field and methods
+
+custom types => alias for build-in types + methods in that alias
