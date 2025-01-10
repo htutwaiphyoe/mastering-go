@@ -218,3 +218,23 @@ struct field also must be exported with capital letter
 use struct type in embedded struct for direct access of nested field and methods
 
 custom types => alias for build-in types + methods in that alias
+
+Scan => single input
+
+multiline input
+
+```go
+reader := bufio.NewReader(os.Stdin)
+value, err := reader.ReadString('\n')
+
+if err != nil {
+    return ""
+}
+
+value = strings.TrimSuffix(value, "\n")
+value = strings.TrimSuffix(value, "\r")
+```
+
+json encoding => encoding/json => json.Marshal(struct) => extract public fields of struct only
+
+struct tags => meta for struct fields => `json:"fieldName"` => library picks up metadata to process

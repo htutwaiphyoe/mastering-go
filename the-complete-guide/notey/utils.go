@@ -1,17 +1,30 @@
 package main
 
 import (
-	"errors"
+	"bufio"
 	"fmt"
+	"os"
+	"strings"
 )
 
-func input(prompt string) (value string, err error) {
-	fmt.Println(prompt)
-	fmt.Scanln(&value)
+func input(prompt string) (value string) {
+	fmt.Printf("%s ", prompt)
 
-	if value == "" {
-		return "", errors.New("empty")
+	reader := bufio.NewReader(os.Stdin)
+	value, err := reader.ReadString('\n')
+
+	if err != nil {
+		return ""
 	}
 
-	return value, nil
+	value = strings.TrimSuffix(value, "\n")
+	value = strings.TrimSuffix(value, "\r")
+
+	return value
+}
+
+func getNote() (string, string) {
+	title := input("Title:")
+	content := input("Content:")
+	return title, content
 }
