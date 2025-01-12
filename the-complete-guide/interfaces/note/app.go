@@ -7,6 +7,8 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"github.com/mastering-go/the-complete-guide/interfaces/utils"
 )
 
 type Note struct {
@@ -16,7 +18,7 @@ type Note struct {
 }
 
 func New(title, content string) (*Note, error) {
-	if title == "" || content == "" {
+	if title == "" {
 		return nil, errors.New("title should not be empty")
 	}
 
@@ -36,7 +38,7 @@ func (note Note) Display() {
 }
 
 func (note Note) Save() error {
-	fileName := fmt.Sprintf("%v.json", strings.ToLower(strings.ReplaceAll(note.Title, " ", "-")))
+	fileName := fmt.Sprintf("note-%v.json", strings.ToLower(strings.ReplaceAll(note.Title, " ", "-")))
 
 	json, err := json.Marshal(note)
 
@@ -45,4 +47,10 @@ func (note Note) Save() error {
 	}
 
 	return os.WriteFile(fileName, json, 0644)
+}
+
+func Get() (string, string) {
+	title := utils.Input("Title:")
+	content := utils.Input("Content:")
+	return title, content
 }

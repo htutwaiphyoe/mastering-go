@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func input(prompt string) (value string) {
+func Input(prompt string) (value string) {
 	fmt.Printf("%s ", prompt)
 
 	reader := bufio.NewReader(os.Stdin)
@@ -21,10 +21,4 @@ func input(prompt string) (value string) {
 	value = strings.TrimSuffix(value, "\r")
 
 	return value
-}
-
-func getNote() (string, string) {
-	title := input("Title:")
-	content := input("Content:")
-	return title, content
 }
