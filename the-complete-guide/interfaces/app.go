@@ -5,6 +5,7 @@ import (
 
 	"github.com/mastering-go/the-complete-guide/interfaces/note"
 	"github.com/mastering-go/the-complete-guide/interfaces/todo"
+	"github.com/mastering-go/the-complete-guide/interfaces/utils"
 )
 
 func main() {
@@ -20,22 +21,17 @@ func main() {
 	}
 
 	note.Display()
-	todo.Display()
-
-	err = note.Save()
-	todoErr = todo.Save()
+	err = utils.Save(note)
 
 	if err != nil {
-		fmt.Println("Note cannot be saved.")
 		return
 	}
 
-	if todoErr != nil {
-		fmt.Println("Todo cannot be saved.")
+	todo.Display()
+	err = utils.Save(todo)
+
+	if err != nil {
 		return
 	}
-
-	fmt.Println("Note saved successfully.")
-	fmt.Println("Todo saved successfully.")
 
 }

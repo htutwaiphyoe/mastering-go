@@ -7,6 +7,10 @@ import (
 	"strings"
 )
 
+type Saver interface {
+	Save() error
+}
+
 func Input(prompt string) (value string) {
 	fmt.Printf("%s ", prompt)
 
@@ -21,4 +25,16 @@ func Input(prompt string) (value string) {
 	value = strings.TrimSuffix(value, "\r")
 
 	return value
+}
+
+func Save(data Saver) error {
+	err := data.Save()
+
+	if err != nil {
+		fmt.Println("Saving failed.")
+		return err
+	}
+
+	fmt.Println("Saving completed.")
+	return nil
 }
