@@ -20,15 +20,13 @@ func main() {
 		return
 	}
 
-	note.Display()
-	err = utils.Save(note)
+	err = utils.Output(note)
 
 	if err != nil {
 		return
 	}
 
-	todo.Display()
-	err = utils.Save(todo)
+	err = utils.Output(todo)
 
 	if err != nil {
 		return

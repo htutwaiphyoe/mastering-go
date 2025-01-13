@@ -11,6 +11,11 @@ type Saver interface {
 	Save() error
 }
 
+type Outputtable interface {
+	Saver
+	Display()
+}
+
 func Input(prompt string) (value string) {
 	fmt.Printf("%s ", prompt)
 
@@ -37,4 +42,9 @@ func Save(data Saver) error {
 
 	fmt.Println("Saving completed.")
 	return nil
+}
+
+func Output(data Outputtable) error {
+	data.Display()
+	return Save(data)
 }
