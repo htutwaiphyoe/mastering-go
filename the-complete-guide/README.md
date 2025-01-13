@@ -252,3 +252,12 @@ type B interface{
 ```
 
 any, interface{} => any value type
+
+switch with types
+
+```go
+switch value.(type){
+    case int:
+    case string:
+}
+```
