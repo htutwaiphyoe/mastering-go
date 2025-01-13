@@ -253,11 +253,19 @@ type B interface{
 
 any, interface{} => any value type
 
-switch with types
+type switch
+
+value.(type) => only for switch
 
 ```go
 switch value.(type){
     case int:
     case string:
 }
+```
+
+type from value
+
+```go
+intValue, ok := value.(int)
 ```
