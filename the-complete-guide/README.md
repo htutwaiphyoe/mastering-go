@@ -238,3 +238,17 @@ value = strings.TrimSuffix(value, "\r")
 json encoding => encoding/json => json.Marshal(struct) => extract public fields of struct only
 
 struct tags => meta for struct fields => `json:"fieldName"` => library picks up metadata to process
+
+embedded interface
+
+```go
+type A interface{
+
+}
+
+type B interface{
+    A
+}
+```
+
+any, interface{} => any value type
