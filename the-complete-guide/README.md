@@ -264,8 +264,16 @@ switch value.(type){
 }
 ```
 
-type from value
+type from value => typeof
 
 ```go
 intValue, ok := value.(int)
+```
+
+generic
+
+```go
+func add[T int | float64](a, b T) T{
+    return a + b
+}
 ```
