@@ -277,3 +277,9 @@ func add[T int | float64](a, b T) T{
     return a + b
 }
 ```
+
+arrays
+
+```go
+numbers := []type{value, value}
+```
