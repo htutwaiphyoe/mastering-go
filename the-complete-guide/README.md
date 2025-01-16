@@ -286,6 +286,8 @@ numbers := []type{value, value}
 
 array => index starts from 0 => array[0]
 
-slices from arrays => array[1:3] => start from 1 and until 2, exclude 3
+slices from arrays => array[1:3] => new array start from 1 and until 3 but excluding 3
 
 array[1:] => start from 1 until the end
+
+array[:4] => start from 0 until the 4, excluding 4
