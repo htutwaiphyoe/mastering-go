@@ -283,3 +283,9 @@ arrays
 ```go
 numbers := []type{value, value}
 ```
+
+array => index starts from 0 => array[0]
+
+slices from arrays => array[1:3] => start from 1 and until 2, exclude 3
+
+array[1:] => start from 1 until the end
