@@ -3,6 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	ages := [3]int{22, 25, 26}
-	fmt.Println(ages)
+	var days []string = []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+	fmt.Println(days[5])
+	days[5] = "Sat"
+	fmt.Println(days[5])
 }
