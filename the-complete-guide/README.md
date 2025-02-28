@@ -383,3 +383,7 @@ one go routine, multiple channels => use select control structure, same as switc
 defer for end of function calls
 
 [defer](https://go.dev/tour/flowcontrol/12)
+
+[http](https://pkg.go.dev/net/http)
+
+[gin](https://github.com/gin-gonic/gin)
