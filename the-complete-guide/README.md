@@ -331,3 +331,7 @@ map => key can have any types
 struct => data structure
 
 map => key value pairs
+
+can pre-allocate array memory => make(arrayType, initialLength, capacity)
+
+[make](https://go.dev/tour/moretypes/13)
