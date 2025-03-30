@@ -325,3 +325,9 @@ spread operator to merge two array => slices...
 map data structure => key + value => map[keyType]valueType => map[string]string
 
 map[key]
+
+map => key can have any types
+
+struct => data structure
+
+map => key value pairs
