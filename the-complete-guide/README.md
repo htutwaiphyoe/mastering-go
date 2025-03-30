@@ -322,4 +322,6 @@ append can add multiple values
 
 spread operator to merge two array => slices...
 
-map data structure => key + value
+map data structure => key + value => map[keyType]valueType => map[string]string
+
+map[key]

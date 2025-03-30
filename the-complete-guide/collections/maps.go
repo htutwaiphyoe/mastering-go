@@ -9,5 +9,15 @@ func maps() {
 		"twitter":  "www.twitter.com",
 	}
 
-	fmt.Print(websites)
+	fmt.Println(websites)
+
+	fmt.Println(websites["google"])
+
+	websites["linkedin"] = "www.linkedin.com"
+	fmt.Println(websites)
+
+	delete(websites, "twitter")
+
+	websites["x"] = "www.x.com"
+	fmt.Println(websites)
 }
