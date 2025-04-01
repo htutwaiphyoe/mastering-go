@@ -351,3 +351,5 @@ functions are first-class in GO
 closure in go
 
 recursion => function calls itself
+
+variadic function => a function with a variable number of arguments
