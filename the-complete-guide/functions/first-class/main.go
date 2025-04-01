@@ -1,10 +1,10 @@
-package main
+package firstClass
 
 import "fmt"
 
 type fn func(float64) float64
 
-func firstClass() {
+func FirstClass() {
 
 	number := []float64{1, 2.5, 3.0, 4}
 
