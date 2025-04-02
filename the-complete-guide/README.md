@@ -347,3 +347,7 @@ functions are first-class in GO
 - function as params
 - function as variable
 - function as return value
+
+closure in go
+
+recursion => function calls itself
