@@ -32,23 +32,11 @@ func transform(numbers *[]float64, fn fn) []float64 {
 	return result
 }
 
-func double[T int | float64](x T) T {
-	return x * 2
-}
+func multiply(by float64) fn {
 
-func triple[T int | float64](x T) T {
-	return x * 3
-}
-
-func multiply(by int) fn {
-	if by == 2 {
-		return double
-	}
-	if by == 3 {
-		return triple
+	fn := func(x float64) float64 {
+		return x * by
 	}
 
-	return func(x float64) float64 {
-		return x * float64(by)
-	}
+	return fn
 }
