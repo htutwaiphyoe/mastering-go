@@ -335,3 +335,5 @@ map => key value pairs
 can pre-allocate array memory => make(arrayType, initialLength, capacity)
 
 [make](https://go.dev/tour/moretypes/13)
+
+type alias for map

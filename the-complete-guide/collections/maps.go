@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+type StringMap map[string][]string
+
+func (stringMap StringMap) output() {
+	for key, value := range stringMap {
+		fmt.Println(key, value)
+	}
+}
+
 func maps() {
 	websites := map[string]string{
 		"google":   "www.google.com",
@@ -29,10 +37,10 @@ func maps() {
 
 	fmt.Println(slices)
 
-	maps := make(map[string][]string, 5)
+	maps := make(StringMap, 5)
 	maps["a"] = []string{"a", "b", "c"}
 	maps["b"] = []string{"d", "e", "f"}
 	maps["c"] = []string{"g", "h", "i"}
 
-	fmt.Println(maps)
+	maps.output()
 }
