@@ -337,3 +337,13 @@ can pre-allocate array memory => make(arrayType, initialLength, capacity)
 [make](https://go.dev/tour/moretypes/13)
 
 type alias for map
+
+loop for array, slice and map
+
+## Function Deep Dive
+
+functions are first-class in GO
+
+- function as params
+- function as variable
+- function as return value
