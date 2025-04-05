@@ -317,3 +317,7 @@ dynamic array => []type{} => automatically create slices
 cannot assign directly in array index out of bound
 
 use append(slice, item) for dynamic and return new slice with new array and re-assign make overwrite original array
+
+append can add multiple values
+
+spread operator to merge two array => slices...

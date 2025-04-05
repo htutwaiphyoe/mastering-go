@@ -5,4 +5,7 @@ func main() {
 	array()
 
 	exercise()
+
+	spread()
+
 }
