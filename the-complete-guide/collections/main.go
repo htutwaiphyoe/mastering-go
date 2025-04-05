@@ -8,4 +8,6 @@ func main() {
 
 	spread()
 
+	maps()
+
 }
