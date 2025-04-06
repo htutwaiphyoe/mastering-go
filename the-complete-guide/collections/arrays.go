@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func array() {
 	days := []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
 
 	weekdays := days[:5]
@@ -40,6 +40,4 @@ func main() {
 
 	adults = append(adults, 30)
 	fmt.Println(adults)
-
-	exercise()
 }

@@ -4,6 +4,11 @@ import (
 	"fmt"
 )
 
+type Product struct {
+	id    int
+	title string
+}
+
 func exercise() {
 	hobbies := [3]string{"Coding", "Writing", "Gaming"}
 
@@ -23,14 +28,10 @@ func exercise() {
 	courseGoals = append(courseGoals, "Projects with Go")
 	fmt.Println(courseGoals)
 
-	type Product struct {
-		id    int
-		title string
-	}
-
 	products := []Product{
 		{1, "AirPods Pro"},
-		{2, "iPhone 16 Pro"}}
+		{2, "iPhone 16 Pro"},
+	}
 
 	products = append(products, Product{3, "MacBook Pro M4Pro"})
 
