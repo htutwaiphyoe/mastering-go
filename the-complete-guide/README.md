@@ -291,3 +291,23 @@ slices from arrays => array[1:3] => new array start from 1 and until 3 but exclu
 array[1:] => start from 1 until the end
 
 array[:4] => start from 0 until the 4, excluding 4
+
+if there is no assigned value, add default value => [4]string => 4 empty strings
+
+slice => subset of the array => more than one value, not entire array
+
+cannot start with negative indexes
+
+array can be out of bound, last element => length + 1
+
+slices can be created from another slices
+
+slices reference same memory address of array, so if mutate of the item, it will affect original array
+
+go saves metadata of slices, A slice has both a length and a capacity.
+
+len => number of items in array/slice
+
+cap => capacity of array => the number of elements in the underlying array, counting from the first element in the slice
+
+[len vs cap](https://go.dev/tour/moretypes/11)
