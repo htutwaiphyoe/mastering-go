@@ -357,3 +357,7 @@ variadic function => a function with a variable number of arguments
 [variadic](https://go.dev/play/p/T6-_T7KOIg)
 
 rest parameter => ...type
+
+spread operator => slice...
+
+json:"-" => ignore in json
