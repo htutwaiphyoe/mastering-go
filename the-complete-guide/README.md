@@ -311,3 +311,9 @@ len => number of items in array/slice
 cap => capacity of array => the number of elements in the underlying array, counting from the first element in the slice
 
 [len vs cap](https://go.dev/tour/moretypes/11)
+
+dynamic array => []type{} => automatically create slices
+
+cannot assign directly in array index out of bound
+
+use append(slice, item) for dynamic and return new slice with new array and re-assign make overwrite original array

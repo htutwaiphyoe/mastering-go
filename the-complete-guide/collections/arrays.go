@@ -38,4 +38,7 @@ func main() {
 	fmt.Println(len(adults))
 	fmt.Println(cap(adults))
 
+	adults = append(adults, 30)
+	fmt.Println(adults)
+
 }
