@@ -361,3 +361,17 @@ rest parameter => ...type
 spread operator => slice...
 
 json:"-" => ignore in json
+
+## Concurrency
+
+without concurrency => one after another
+
+go routines + channel for concurrency => go
+
+channel => make(chan type) => pass to function => channel <- value => <- channel
+
+close(channel) => there is longest one
+
+go routines ignore return values => use error channels
+
+channel can be any value
