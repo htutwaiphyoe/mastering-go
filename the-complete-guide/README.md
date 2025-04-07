@@ -375,3 +375,7 @@ close(channel) => there is longest one
 go routines ignore return values => use error channels
 
 channel can be any value
+
+one go routine, multiple channels => use select control structure, same as switch
+
+[select](https://go.dev/tour/concurrency/5)
