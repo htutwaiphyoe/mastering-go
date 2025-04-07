@@ -41,4 +41,5 @@ func main() {
 	adults = append(adults, 30)
 	fmt.Println(adults)
 
+	exercise()
 }
