@@ -379,3 +379,7 @@ channel can be any value
 one go routine, multiple channels => use select control structure, same as switch
 
 [select](https://go.dev/tour/concurrency/5)
+
+defer for end of function calls
+
+[defer](https://go.dev/tour/flowcontrol/12)
