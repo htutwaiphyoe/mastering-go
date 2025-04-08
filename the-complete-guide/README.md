@@ -387,3 +387,5 @@ defer for end of function calls
 [http](https://pkg.go.dev/net/http)
 
 [gin](https://github.com/gin-gonic/gin)
+
+[bcrypt](https://pkg.go.dev/golang.org/x/crypto/bcrypt)
