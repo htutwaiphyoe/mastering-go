@@ -389,3 +389,5 @@ defer for end of function calls
 [gin](https://github.com/gin-gonic/gin)
 
 [bcrypt](https://pkg.go.dev/golang.org/x/crypto/bcrypt)
+
+[jwt](https://github.com/golang-jwt/jwt)
