@@ -15,3 +15,11 @@ Efficient Compilation + Easy to Code + Efficient Execution
 strong, static type system, C-like syntax, compiled, multi-paradigm, garbage-collected, fast, single binary compilation
 
 start -> 2007, public released 2009, 1st 2012 -> Backward compatible
+
+## Philosophy
+
+- Simplicity
+- Built-in Network and Concurrency
+- Vanilla
+- CLI
+
