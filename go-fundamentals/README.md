@@ -12,7 +12,13 @@ Efficient Compilation + Easy to Code + Efficient Execution
 
 ## History & Timeline
 
-strong, static type system, C-like syntax, compiled, multi-paradigm, garbage-collected, fast, single binary compilation
+- strong, static type system
+- C-like syntax
+- compiled
+- multi-paradigm
+- garbage-collected
+- fast
+- single binary compilation
 
 start -> 2007, public released 2009, 1st 2012 -> Backward compatible
 
@@ -23,3 +29,12 @@ start -> 2007, public released 2009, 1st 2012 -> Backward compatible
 - Vanilla
 - CLI
 
+## Setup
+
+Every file must be under a package -> package means folder
+
+default -> main package
+
+entry point -> func main
+
+run -> go run fileName.go
