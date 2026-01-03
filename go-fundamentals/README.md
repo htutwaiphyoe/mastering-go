@@ -38,3 +38,7 @@ default -> main package
 entry point -> func main
 
 run -> go run fileName.go
+
+## Use Cases
+
+- can generate executable binary files for different platforms (arm, 86x) and operating systems (Mac, Window, WebAssembly, JS)
