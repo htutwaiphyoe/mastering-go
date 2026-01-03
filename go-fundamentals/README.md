@@ -42,3 +42,27 @@ run -> go run fileName.go
 ## Use Cases
 
 - can generate executable binary files for different platforms (arm, 86x) and operating systems (Mac, Window, WebAssembly, JS)
+
+## Basics
+
+.go -> file extension
+
+code block -> {}
+
+no style freedom
+
+optional semicolon
+
+case-sensitive
+
+no try, catch
+
+folder is a package
+
+package name can be url or names
+
+entry main function
+
+modules is a group of packages, project with go.mod file with configuration and metadata
+
+go mod init, go build, go run ., go test, go test
