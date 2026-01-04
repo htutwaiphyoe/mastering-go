@@ -66,3 +66,13 @@ entry main function
 modules is a group of packages, project with go.mod file with configuration and metadata
 
 go mod init, go build, go run ., go test, go test
+
+## Modules
+
+go mod init moduleName
+
+moduleName -> url pattern -> go.mod
+
+workspaces -> top layer of module -> go work init -> go.work
+
+workspace > module > package
