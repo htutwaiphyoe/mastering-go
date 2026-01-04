@@ -76,3 +76,20 @@ moduleName -> url pattern -> go.mod
 workspaces -> top layer of module -> go work init -> go.work
 
 workspace > module > package
+
+## Variables
+
+constant -> compile time
+
+immutable -> runtime
+
+```go
+var name type // default value
+
+const name = value // fixed value -> bool, string or number (NOT IMMUTABLE)
+
+var text string = "Hello" // double quotes
+
+otherText := "Hello" // shortcut of variable initialization (ONLY within function)
+
+```
