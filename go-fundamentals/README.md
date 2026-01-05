@@ -93,3 +93,14 @@ var text string = "Hello" // double quotes
 otherText := "Hello" // shortcut of variable initialization (ONLY within function)
 
 ```
+
+## Types
+
+- string
+- byte (int8), int (int32), int8, int16, int32, int64, unit, uint8, uint16, unit32, uint64
+- int8 (-127 - 127), uint8 (0 - 255)
+- float32, float64 (json)
+- bool, true, false
+- ==, !=, <, >, <=, >=, &&, ||, !
+- complex64 complex128
+- pointer (*, &)
