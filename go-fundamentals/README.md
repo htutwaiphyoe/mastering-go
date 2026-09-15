@@ -101,6 +101,18 @@ otherText := "Hello" // shortcut of variable initialization (ONLY within functio
 - int8 (-127 - 127), uint8 (0 - 255)
 - float32, float64 (json)
 - bool, true, false
-- ==, !=, <, >, <=, >=, &&, ||, !
 - complex64 complex128
+- ==, !=, <, >, <=, >=, &&, ||, !
 - pointer (*, &)
+
+## Packages
+
+- a group of files in the same folder
+- define name at the top of file
+- import other packages (import "package")
+- built-in, custom, third-party
+- same packages in different files can be only in same folder
+- don't need to import other files under same package -> compiler merge files under same package to one big file -> file is just for organization
+- variable from different files can access in other files under same package -> no need to import
+- don't use print, not guaranteed for working in all platforms and os -> use fmt package -> fmt.Println(), fmt.Printf(), fmt.Sprintf()
+- export variable or function -> first letter is capitalized
